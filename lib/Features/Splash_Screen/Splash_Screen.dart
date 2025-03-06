@@ -1,6 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping/Features/auth/log_in/log_in_screen.dart';
+
+import '../../Core/resources/my_colors.dart';
+import '../../Core/resources/app_assets.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -27,13 +31,13 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     );
 
     // الانتقال إلى Home Page بعد 3 ثوانٍ
-    // Future.delayed(Duration(seconds: 10), () {
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => HomePage()),
-    //   );
-    // }
-    // );
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
+    }
+    );
   }
 
   @override
@@ -45,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFF9775FA),
+      backgroundColor: AppColors.primaryColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -56,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                 return  Transform.rotate(
                   angle: _animation.value, // تدوير الصورة بشكل طفيف
                   alignment: Alignment.topCenter, // تثبيت الجزء العلوي وتحريك السفلي
-                  child: Image.asset('assets/Splash.png', width: 150),
+                  child: Image.asset(AppAssets.Splashscreen, width: 250),
                 );
               },
             ),

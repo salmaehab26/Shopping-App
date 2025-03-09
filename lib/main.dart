@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Core/routes_manager/routes_generators.dart';
 
-import 'Core/app_theme.dart';
+import 'none/app_theme.dart';
 import 'Core/my_bloc_observer.dart';
 import 'Core/routes_manager/app_routes.dart';
 import 'Features/Splash_Screen/Splash_Screen.dart';

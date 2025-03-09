@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/utils/validators.dart';
 import '../../../Core/resources/app_styles.dart';
 import '../../../Core/resources/my_colors.dart';
 import '../../../Core/routes_manager/app_routes.dart';
-import '../../../none/Widgets/custom_elevated_button.dart';
-import '../../../none/Widgets/custom_text_form_field.dart';
+import '../../../Core/widgets/custom_elevated_button.dart';
+import '../../../Core/widgets/custom_text_form_field.dart';
+import '../../../Core/widgets/validators.dart';
 
 class Sign_Up extends StatefulWidget {
 const Sign_Up({super.key});

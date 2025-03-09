@@ -1,5 +1,3 @@
-
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,16 +6,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../Core/resources/app_styles.dart';
 import '../../../Core/resources/my_colors.dart';
 import '../../../Core/routes_manager/app_routes.dart';
-import '../../../Core/utils/validators.dart';
-import '../../../none/Widgets/custom_elevated_button.dart';
-import '../../../none/Widgets/custom_text_form_field.dart';
+import '../../../Core/widgets/custom_elevated_button.dart';
+import '../../../Core/widgets/custom_text_form_field.dart';
+import '../../../Core/widgets/validators.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -29,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Padding(
-                      padding:  EdgeInsets.symmetric(vertical: 125.w),
+                      padding: EdgeInsets.symmetric(vertical: 125.w),
                       child: Center(
                         child: Column(
                           children: [
@@ -37,7 +35,8 @@ class LoginScreen extends StatelessWidget {
                               'Welcome',
                               style: AppStyles.large30dark,
                               maxLines: 1,
-                            ), AutoSizeText(
+                            ),
+                            AutoSizeText(
                               'Please sign in with your mail',
                               style: AppStyles.medium15bback,
                               maxLines: 1,
@@ -46,7 +45,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-
                     Padding(
                       padding: EdgeInsets.only(top: 40.h),
                       child: Form(
@@ -59,15 +57,15 @@ class LoginScreen extends StatelessWidget {
                               // style: AppStyles.medium18White,
                             ),
                             CustomTextFormField(
-                                isPassword: false,
-                                keyboardType: TextInputType.text,
-                                isObscureText: false,
-                                hintText: "enter your name",
-                                // hintStyle: AppStyles.light18HintText,
-                                // filledColor: AppColors.whiteColor,
-                                // controller: viewModel.mailController,
-                                // validator: AppValidators.validateEmail
-                              ),
+                              isPassword: false,
+                              keyboardType: TextInputType.text,
+                              isObscureText: false,
+                              hintText: "enter your name",
+                              // hintStyle: AppStyles.light18HintText,
+                              // filledColor: AppColors.whiteColor,
+                              // controller: viewModel.mailController,
+                              // validator: AppValidators.validateEmail
+                            ),
                             Text(
                               "Password",
                               // style: AppStyles.medium18White,
@@ -81,7 +79,6 @@ class LoginScreen extends StatelessWidget {
                               // filledColor: AppColors.whiteColor,
                               // controller: viewModel.passwordController,
                               validator: AppValidators.validatePassword,
-
                             ),
                             InkWell(
                               onTap: () {},
@@ -103,23 +100,18 @@ class LoginScreen extends StatelessWidget {
                             ),
                             Padding(
                                 padding: EdgeInsets.only(top: 30.h),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushReplacementNamed(
-                                        context, AppRoutes.signupRoute);
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'Don’t have an account? Create Account',
-                                          // style: AppStyles.medium18White,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
+                                child: Row(children: [
+                                  Text('Don’t have an account? '),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushReplacementNamed(
+                                          context, AppRoutes.signupRoute);
+                                    },
+                                    child: Text(
+                                      'Create Account',
+                                    ),
                                   ),
-                                ))
+                                ]))
                           ],
                         ),
                       ),
@@ -131,8 +123,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
-
 }

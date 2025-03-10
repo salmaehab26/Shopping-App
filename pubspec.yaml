@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^9.1.0
 #  google_fonts: ^6.2.0
   auto_size_text: ^3.0.0
+  dartz: ^0.10.1
 #  google_fonts: any
 #  google_fonts: ^6.2.0
 

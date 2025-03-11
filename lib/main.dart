@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Core/routes_manager/routes_generators.dart';
 
+import 'di/DependencyInjection.dart';
 import 'none/app_theme.dart';
 import 'Core/my_bloc_observer.dart';
 import 'Core/routes_manager/app_routes.dart';
@@ -12,6 +13,8 @@ import 'Features/auth/log_in/log_in_screen.dart';
 
 void main()  {
   Bloc.observer = MyBlocObserver();
+  configureDependencies();
+
   runApp( MyApp());
 
   }

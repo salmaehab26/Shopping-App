@@ -8,12 +8,12 @@ class SignUpResponseDto extends SignUpResponseEntity {
     super.statusMessage});
 
   SignUpResponseDto.fromJson(dynamic json) {
-    message = json['message'];
-    user = json['user'] != null ? UserDto.fromJson(json['user']) : null;
-    token = json['token'];
-    statusMessage = json['statusMessage'];
+      message = json['message'] ;
+      user = json['user'] != null ? UserDto.fromJson(json['user']) : null;
+      token = json['token'];
+      statusMessage = json['statusMessage'] ;
 
-  }
+    }
 
 
 

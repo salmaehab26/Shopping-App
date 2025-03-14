@@ -1,5 +1,5 @@
 import 'package:shopping/Domain/Failures.dart';
-import 'package:shopping/Domain/entities/Sign_up_response_entity.dart';
+import 'package:shopping/Domain/entities/SignUpResponseEntity.dart';
 
 abstract class SignUPStates{}
 class errorStates extends SignUPStates{

@@ -12,6 +12,6 @@ String path="https://ecommerce.routemisr.com";
   }
 
   Future<Response> postData (String endpoint ,{Map<String,dynamic>? body,Map<String,dynamic>? headers}){
-    return dio.post(path+endpoint,data: body,options: Options(headers: headers));
+    return dio.post(path+endpoint,data: body,options: Options(headers: headers,validateStatus: (status) => true,));
   }
 }

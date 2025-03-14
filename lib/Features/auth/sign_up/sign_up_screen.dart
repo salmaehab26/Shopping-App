@@ -25,6 +25,7 @@ class _Sign_UpState extends State<Sign_Up> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignUpViewModel, SignUPStates>(
+      bloc: viewModel,
         listener: (context, state) {
           if (state is loadingStates) {
             DialogUtil.showLoading(context, "loading");
@@ -56,7 +57,7 @@ class _Sign_UpState extends State<Sign_Up> {
                             children: [
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(vertical: 104),
+                                    const EdgeInsets.symmetric(vertical: 100),
                                 child: Center(
                                   child: Text("Sign Up",
                                       style: AppStyles.large30dark),
@@ -116,7 +117,6 @@ class _Sign_UpState extends State<Sign_Up> {
                                 isObscureText: true,
                                 hintText: "enter your password",
                                 // hintStyle: AppStyles.light18HintText,
-                                // filledColor: AppColors.whiteColor,
                                 controller: viewModel.passwordController,
                                 validator: AppValidators.validatePassword,
                                 suffixIcon: IconButton(
@@ -133,7 +133,6 @@ class _Sign_UpState extends State<Sign_Up> {
                                 isObscureText: true,
                                 hintText: "enter your re-password",
                                 // hintStyle: AppStyles.light18HintText,
-                                // filledColor: AppColors.whiteColor,
                                 controller: viewModel.repassworController,
                                 validator: AppValidators.validatePassword,
                                 suffixIcon: IconButton(
@@ -147,7 +146,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                     textStyle: AppStyles.medium15bback,
                                     text: "Sign up",
                                     onPressed: () {
-                                      // viewModel.register();
+                                      viewModel.SignUP();
                                     }),
                               ),
                               Padding(
@@ -165,7 +164,6 @@ class _Sign_UpState extends State<Sign_Up> {
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.ellipsis,
                                           'Already have an account? login',
-                                          // style: AppStyles.medium18White,
                                           maxLines: 1,
                                         ),
                                       ),

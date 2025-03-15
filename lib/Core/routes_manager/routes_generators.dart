@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shopping/Core/routes_manager/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping/Features/Home/homeScreen.dart';
 import 'package:shopping/Features/Splash_Screen/Splash_Screen.dart';
 
 import '../../Features/auth/log_in/log_in_screen.dart';
@@ -12,13 +13,13 @@ class RoutesGenerator{
   static Route<dynamic> getRoutes(RouteSettings settings){
     switch (settings.name) {
       case AppRoutes.loginRoute:
-        return MaterialPageRoute(builder:(_)=>const LoginScreen());
+        return MaterialPageRoute(builder:(_)=> LoginScreen());
       case AppRoutes.signupRoute:
         return MaterialPageRoute(builder:(_)=>const Sign_Up());
       case AppRoutes.splashScreen:
       return MaterialPageRoute(builder:(_)=> SplashScreen());
-      // case AppRoutes.loginRoute:
-      //   return MatrialPageRoute(builder:(_))=>const LoginScreen();
+      case AppRoutes.homeRoute:
+        return MaterialPageRoute(builder:(_)=>const Homescreen());
       default:
         return unDefinedRoute();
     }

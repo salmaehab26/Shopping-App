@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:shopping/Domain/repository/AuthRepository.dart';
 
 import '../Failures.dart';
-import '../entities/Sign_up_response_entity.dart';
+import '../entities/SignUpResponseEntity.dart';
 @injectable
 class SignUpUseCase{
   AuthRepository  signUpRepository;

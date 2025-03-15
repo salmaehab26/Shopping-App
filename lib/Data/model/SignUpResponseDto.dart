@@ -1,4 +1,4 @@
-import '../../Domain/entities/Sign_up_response_entity.dart';
+import '../../Domain/entities/SignUpResponseEntity.dart';
 
 class SignUpResponseDto extends SignUpResponseEntity {
   SignUpResponseDto({

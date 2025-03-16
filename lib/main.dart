@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Core/routes_manager/routes_generators.dart';
 
+import 'Features/Home/MainScreen.dart';
 import 'di/DependencyInjection.dart';
 import 'none/app_theme.dart';
 import 'Core/my_bloc_observer.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             onGenerateRoute: RoutesGenerator.getRoutes,
             debugShowCheckedModeBanner: false,
-            initialRoute: AppRoutes.splashScreen,
+            initialRoute: AppRoutes.mainRoute,
             theme: AppTheme.mainTheme,
           );
         });

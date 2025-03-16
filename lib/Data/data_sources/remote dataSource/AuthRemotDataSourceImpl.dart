@@ -1,8 +1,8 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shopping/Data/ApiManager.dart';
-import 'package:shopping/Data/EndPoints.dart';
+import 'package:shopping/Core/resources/ApiManager.dart';
+import 'package:shopping/Core/resources/EndPoints.dart';
 import 'package:shopping/Data/model/LogInResponseDto.dart';
 import 'package:shopping/Data/model/SignUpResponseDto.dart';
 import 'package:shopping/Domain/Failures.dart';

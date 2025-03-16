@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
             DialogUtil.showMessage(context, "succesfully",
                 title: "success",posAction: () {
                 Navigator.pushReplacementNamed(
-                    context, AppRoutes.homeRoute);
+                    context, AppRoutes.mainRoute);
                 },posActionName: "ok");
           }
         },
@@ -133,7 +133,7 @@ class LoginScreen extends StatelessWidget {
                                               context, AppRoutes.signupRoute);
                                         },
                                         child: Text(
-                                          'Create Account',
+                                          'Create Account',style: TextStyle(color:AppColors.primaryColor),
                                         ),
                                       ),
                                     ]))

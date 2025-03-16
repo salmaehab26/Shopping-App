@@ -1,7 +1,7 @@
-// class MyAssets {
-//   // Selected Icons
-//   static const String selectedHomeIcon = "assets/icons/home_icon_selected.png";
-//   static const editIcon = "assets/icons/edit.png";
+class MyAssets {
+  // Selected Icons
+  static const String slider = "assets/Slider/";
+  static const editIcon = "assets/icons/edit.png";
 //   static const String selectedCategoryIcon =
 //       "assets/icons/category_icon_selected.png";
 //   static const String selectedWishlistIcon =
@@ -45,4 +45,4 @@
 //   static const shoesItemImage1 = "assets/images/items/shoes-1.png";
 //   static const shoesItemImage2 = "assets/images/items/shoes-2.png";
 //   static const shoesItemImage3 = "assets/images/items/shoes-3.png";
-// }
+}

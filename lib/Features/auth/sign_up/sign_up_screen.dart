@@ -102,7 +102,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                   keyboardType: TextInputType.emailAddress,
                                   isObscureText: false,
                                   hintText: "enter your email address",
-                                  focusColor: AppColors.lightPrimaryColor,
+                                  focusColor: AppColors.primaryColor,
                                   // hintStyle: AppStyles.light18HintText,
                                   // filledColor: AppColors.whiteColor,
                                   controller: viewModel.emailController,

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../Domain/Failures.dart';
-import '../../../Domain/entities/LogInResponseEntity.dart';
-import '../../../Domain/entities/SignUpResponseEntity.dart';
+import '../../../../Domain/Failures.dart';
+import '../../../../Domain/entities/LogInResponseEntity.dart';
+import '../../../../Domain/entities/SignUpResponseEntity.dart';
 
 abstract class AuthRemotDataSource{
   Future<Either<Failures, SignUpResponseEntity>> SignUp(String name,

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shopping/Data/data_sources/remote%20dataSource/AuthRemotDataSource.dart';
+import 'package:shopping/Data/data_sources/remote%20dataSource/AuthRemoteDataSource/AuthRemotDataSource.dart';
 import 'package:shopping/Domain/Failures.dart';
 import 'package:shopping/Domain/entities/LogInResponseEntity.dart';
 import 'package:shopping/Domain/entities/SignUpResponseEntity.dart';

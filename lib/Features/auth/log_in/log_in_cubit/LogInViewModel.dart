@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shopping/Domain/use_cases/LogInUseCase.dart';
+import 'package:shopping/Domain/use_cases/authUseCase/LogInUseCase.dart';
 import 'package:shopping/Features/auth/log_in/log_in_cubit/LogInStates.dart';
 @injectable
 class LogInViewModel extends Cubit<LogInStates> {

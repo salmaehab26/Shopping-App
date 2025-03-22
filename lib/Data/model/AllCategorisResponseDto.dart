@@ -1,47 +1,43 @@
-class AllCategorisResponseDto {
-  AllCategorisResponseDto({
-      this.results, 
-      this.metadata, 
-      this.data,});
+import '../../Domain/entities/AllCategoriesResponseEntity.dart';
 
-  AllCategorisResponseDto.fromJson(dynamic json) {
+class AllCategoriesResponseDto extends AllCategoriesResponseEntity {
+  AllCategoriesResponseDto({
+    super.results,
+    super.metadata,
+    super.data,
+    super.message
+
+  });
+
+  AllCategoriesResponseDto.fromJson(dynamic json) {
     results = json['results'];
-    metadata = json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null;
+    message = json['message'];
+
+    metadata = json['metadata'] != null
+        ? MetadataDto.fromJson(json['metadata'])
+        : null;
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data?.add(Data.fromJson(v));
+        data?.add(DataDto.fromJson(v));
       });
     }
   }
-  int? results;
-  Metadata? metadata;
-  List<Data>? data;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['results'] = results;
-    if (metadata != null) {
-      map['metadata'] = metadata?.toJson();
-    }
-    if (data != null) {
-      map['data'] = data?.map((v) => v.toJson()).toList();
-    }
-    return map;
-  }
 
 }
 
-class Data {
-  Data({
-      this.id, 
-      this.name, 
-      this.slug, 
-      this.image, 
-      this.createdAt, 
-      this.updatedAt,});
+class DataDto extends DataEntity {
+  DataDto({
+    super.id,
+    super.name,
+    super.slug,
+    super.image,
+    super.createdAt,
+    super.updatedAt,
+  });
 
-  Data.fromJson(dynamic json) {
+  DataDto.fromJson(dynamic json) {
     id = json['_id'];
     name = json['name'];
     slug = json['slug'];
@@ -49,12 +45,6 @@ class Data {
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
   }
-  String? id;
-  String? name;
-  String? slug;
-  String? image;
-  String? createdAt;
-  String? updatedAt;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -66,23 +56,20 @@ class Data {
     map['updatedAt'] = updatedAt;
     return map;
   }
-
 }
 
-class Metadata {
-  Metadata({
-      this.currentPage, 
-      this.numberOfPages, 
-      this.limit,});
+class MetadataDto extends MetadataEntity {
+  MetadataDto({
+    super.currentPage,
+    super.numberOfPages,
+    super.limit,
+  });
 
-  Metadata.fromJson(dynamic json) {
+  MetadataDto.fromJson(dynamic json) {
     currentPage = json['currentPage'];
     numberOfPages = json['numberOfPages'];
     limit = json['limit'];
   }
-  int? currentPage;
-  int? numberOfPages;
-  int? limit;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -91,5 +78,4 @@ class Metadata {
     map['limit'] = limit;
     return map;
   }
-
 }

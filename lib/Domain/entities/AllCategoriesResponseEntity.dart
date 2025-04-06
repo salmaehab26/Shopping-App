@@ -1,5 +1,5 @@
-class AllCategoriesResponseEntity {
-  AllCategoriesResponseEntity({
+class AllCategoriesORBrandsResponseEntity {
+  AllCategoriesORBrandsResponseEntity({
     this.results,
     this.metadata,
     this.data,

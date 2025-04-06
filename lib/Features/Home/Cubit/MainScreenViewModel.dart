@@ -6,8 +6,8 @@ import '../pages/ProductsScreen.dart';
 import '../pages/ProfileTab.dart';
 import 'MainScreenStates.dart';
 
-class HomeViewModel extends Cubit<MainScreenStates> {
-  HomeViewModel():super(MainScreenInitState());
+class MainScreenViewModel extends Cubit<MainScreenStates> {
+  MainScreenViewModel():super(MainScreenInitState());
   int currentIndex = 0;
   void Changeselectindex(int selectedIndex) {
     emit(MainScreenInitState());

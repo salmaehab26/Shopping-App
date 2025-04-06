@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/Core/resources/my_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping/Features/Home/parts/announcement.dart';
+import '../../../di/DependencyInjection.dart';
+import '../Cubit/HomeScreenStates.dart';
+import '../Cubit/HomeScreenViewModel.dart';
 import '../parts/CartegoryGrid.dart';
 import '../parts/categoryBar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+   HomeScreen({super.key});
+  HomeScreenViewModel viewModel=getIt<HomeScreenViewModel>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
-      ),
-      body:Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Announcement(),
-              CustomSectionBar(NameSection: "Categories",),
-              CartegoryGrid(),
-              CustomSectionBar(NameSection: "Brands",),
+    return BlocBuilder<HomeScreenViewModel, HomeScreenStates>(
+        bloc:viewModel..getCategories()..getBrands(),
+        builder: (context,state) {
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                Announcement(),
+                CustomSectionBar(NameSection: "Categories",),
+                state is HomeCategoriesSuccesStates ?
+                CartegoryGrid( category:state.allCategoriesResponseEntity):CircularProgressIndicator(),
+                CustomSectionBar(NameSection: "Brands",),
+                state is HomeBrandsSuccesStates ?
+                CartegoryGrid( category:state.allBrandsResponseEntity):CircularProgressIndicator(),
 
-            ],
-          ),
-        ),
-      ),
-    );
+              ],
+            ),
+          );
+        });
   }
 }

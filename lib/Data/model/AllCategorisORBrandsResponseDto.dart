@@ -1,7 +1,7 @@
 import '../../Domain/entities/AllCategoriesResponseEntity.dart';
 
-class AllCategoriesResponseDto extends AllCategoriesResponseEntity {
-  AllCategoriesResponseDto({
+class AllCategoriesORBrandsResponseDto extends AllCategoriesORBrandsResponseEntity {
+  AllCategoriesORBrandsResponseDto({
     super.results,
     super.metadata,
     super.data,
@@ -9,7 +9,7 @@ class AllCategoriesResponseDto extends AllCategoriesResponseEntity {
 
   });
 
-  AllCategoriesResponseDto.fromJson(dynamic json) {
+  AllCategoriesORBrandsResponseDto.fromJson(dynamic json) {
     results = json['results'];
     message = json['message'];
 

@@ -8,16 +8,18 @@ import 'package:shopping/Features/Home/Cubit/MainScreenViewModel.dart';
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
-  HomeViewModel viewModel = HomeViewModel();
+  MainScreenViewModel viewModel = MainScreenViewModel();
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeViewModel, MainScreenStates>(
+    return BlocBuilder<MainScreenViewModel, MainScreenStates>(
       bloc: viewModel,
       builder: (context, state) {
         return Scaffold(
-          
-body: viewModel.Tabs[viewModel.currentIndex],
+          appBar: AppBar(
+            backgroundColor: AppColors.primaryColor,
+          ),
+body:Padding(padding: EdgeInsets.all(15),child: viewModel.Tabs[viewModel.currentIndex],) ,
           bottomNavigationBar: ClipRRect(borderRadius:BorderRadius.vertical(top:Radius.circular(30) ),
           child: BottomNavigationBar(
             onTap: (value) {

@@ -4,10 +4,11 @@ import 'package:shopping/Domain/Failures.dart';
 import 'package:shopping/Domain/entities/AllCategoriesResponseEntity.dart';
 import 'package:shopping/Domain/repository/AllCategoryORBrandsRepository.dart';
 @injectable
-class AllCategoriesUseCase{
-  AllCategoryORBrandsRepository allCategoryRepository;
-  AllCategoriesUseCase({required this.allCategoryRepository});
-  Future<Either<Failures,AllCategoriesORBrandsResponseEntity>>invoke(){
-    return allCategoryRepository.getCategories();
+class AllBrandsUseCase{
+  AllCategoryORBrandsRepository allBrandsRepository;
+  AllBrandsUseCase({required this.allBrandsRepository});
+  Future<Either<Failures,AllCategoriesORBrandsResponseEntity>>invoke()async{
+    return allBrandsRepository.getBrands();
+
   }
 }

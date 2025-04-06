@@ -12,7 +12,7 @@ import 'CategoryItem.dart';
 
 class CartegoryGrid extends StatelessWidget {
    CartegoryGrid({super.key,required this.category});
-AllCategoriesORBrandsResponseEntity category;
+List<DataEntity> category;
   @override
   Widget build(BuildContext context) {
     return  Row(
@@ -22,11 +22,11 @@ AllCategoriesORBrandsResponseEntity category;
               height: 250.h,
               child: GridView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: category.data!.length,
+                itemCount: category.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemBuilder: (BuildContext context, int index) {
-                  return CaregoryItem(category: category.data![index],);
+                  return CaregoryItem(category: category, index: index,);
                 },
               ),
             ),

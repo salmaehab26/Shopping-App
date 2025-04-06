@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +10,9 @@ import 'package:shopping/Features/Home/Cubit/HomeScreenViewModel.dart';
 import 'package:shopping/di/DependencyInjection.dart';
 
 class CaregoryItem extends StatelessWidget {
-   CaregoryItem({super.key,required this.category});
-   DataEntity category;
+   CaregoryItem({super.key,required this.category,required this.index});
+   List<DataEntity> category;
+   int index;
   @override
   Widget build(BuildContext context) {
     return  Column(
@@ -20,13 +22,13 @@ class CaregoryItem extends StatelessWidget {
             child: Container(
               width: 100.w,
               height: 100.h,
-              child: CachedNetworkImage(imageUrl: category.image!,
-
+              child: CachedNetworkImage(imageUrl: category[index].image!,
+errorWidget: (context, url, error) => Icon(Icons.error),
                 fit: BoxFit.fill,
               ),
             ),
           ),
-          Text(category.name!)
+          Text(category[index].name!)
         ],
       );
 

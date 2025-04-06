@@ -20,11 +20,11 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Announcement(),
                 CustomSectionBar(NameSection: "Categories",),
-                state is HomeCategoriesSuccesStates ?
-                CartegoryGrid( category:state.allCategoriesResponseEntity):CircularProgressIndicator(),
+                state is HomeCategoriesLoadingStates ?
+              CircularProgressIndicator():  CartegoryGrid( category:viewModel.categoryList),
                 CustomSectionBar(NameSection: "Brands",),
-                state is HomeBrandsSuccesStates ?
-                CartegoryGrid( category:state.allBrandsResponseEntity):CircularProgressIndicator(),
+                state is HomeBrandsLoadingStates ?
+               CircularProgressIndicator():CartegoryGrid( category:viewModel.BrandList)
 
               ],
             ),

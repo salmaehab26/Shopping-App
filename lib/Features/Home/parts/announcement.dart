@@ -4,7 +4,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Announcement extends StatelessWidget {
-  const Announcement({super.key});
+  const   Announcement({super.key});
 
   @override
   Widget build(BuildContext context) {

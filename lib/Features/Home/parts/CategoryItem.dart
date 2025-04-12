@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Domain/entities/AllCategoriesResponseEntity.dart';
-import 'package:shopping/Features/Home/Cubit/HomeScreenStates.dart';
-import 'package:shopping/Features/Home/Cubit/HomeScreenViewModel.dart';
+import 'package:shopping/Features/Home/Cubit/HomeScreenCubit/HomeScreenStates.dart';
+import 'package:shopping/Features/Home/Cubit/HomeScreenCubit/HomeScreenViewModel.dart';
 import 'package:shopping/di/DependencyInjection.dart';
 
 class CaregoryItem extends StatelessWidget {

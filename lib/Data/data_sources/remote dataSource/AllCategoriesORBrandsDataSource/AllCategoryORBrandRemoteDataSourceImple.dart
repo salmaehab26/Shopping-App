@@ -28,14 +28,14 @@ class AllCategoryORBrandsRemoteDataSourceImple implements AllCategoryORBrandsRem
        connectivityResult.contains(ConnectivityResult.wifi)) {
      var response =  await apiManager.getData(EndPoints.AllCategories);
      var responseData=AllCategoriesORBrandsResponseDto.fromJson(response.data);
-     if (response.statusCode! <= 200 && response.statusCode! < 300) {
+     if (response.statusCode! >= 200 && response.statusCode! < 300) {
        return Right(responseData);
      } else {
        return Left(errorServer(ErrorMessage: responseData.message));
      }
    } else {
      return Left(errorNetwork(ErrorMessage: "ErrorMessage"));
-     //
+
    }
  } catch (e) {
    return Left(Failures(ErrorMessage: e.toString()));

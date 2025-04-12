@@ -57,12 +57,12 @@ class LoginScreen extends StatelessWidget {
                               children: [
                                 AutoSizeText(
                                   'Welcome',
-                                  style: AppStyles.large30dark,
+                                  style: AppStyles.primary30text,
                                   maxLines: 1,
                                 ),
                                 AutoSizeText(
                                   'Please sign in with your mail',
-                                  style: AppStyles.medium15bback,
+                                  style: AppStyles.black16text,
                                   maxLines: 1,
                                 ),
                               ],

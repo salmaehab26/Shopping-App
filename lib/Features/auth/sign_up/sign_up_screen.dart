@@ -60,7 +60,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                     const EdgeInsets.symmetric(vertical: 100),
                                 child: Center(
                                   child: Text("Sign Up",
-                                      style: AppStyles.large30dark),
+                                      style: AppStyles.primary30text),
                                 ),
                               ),
                               Text(
@@ -143,7 +143,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                 padding: EdgeInsets.only(top: 35.h),
                                 child: CustomElevatedButton(
                                     backgroundColor: AppColors.primaryColor,
-                                    textStyle: AppStyles.medium15bback,
+                                    textStyle: AppStyles.black16text,
                                     text: "Sign up",
                                     onPressed: () {
                                       viewModel.SignUP();

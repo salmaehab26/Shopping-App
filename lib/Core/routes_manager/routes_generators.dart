@@ -2,23 +2,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:shopping/Core/routes_manager/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/Features/Home/MainScreen.dart';
+import 'package:shopping/Features/Home/Screens/ProductDetails.dart';
+import 'package:shopping/Features/Home/Screens/ProductsScreen.dart';
 import 'package:shopping/Features/Splash_Screen/Splash_Screen.dart';
 import '../../Features/auth/log_in/log_in_screen.dart';
 import '../../Features/auth/sign_up/sign_up_screen.dart';
 
-
-
-class RoutesGenerator{
-  static Route<dynamic> getRoutes(RouteSettings settings){
+class RoutesGenerator {
+  static Route<dynamic> getRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.loginRoute:
-        return MaterialPageRoute(builder:(_)=> LoginScreen());
+        return MaterialPageRoute(builder: (_) => LoginScreen());
       case AppRoutes.signupRoute:
-        return MaterialPageRoute(builder:(_)=>const Sign_Up());
+        return MaterialPageRoute(builder: (_) => const Sign_Up());
       case AppRoutes.splashScreen:
-      return MaterialPageRoute(builder:(_)=> SplashScreen());
+        return MaterialPageRoute(builder: (_) => SplashScreen());
+      case AppRoutes.productRoute:
+        return MaterialPageRoute(builder: (_) => ProductsScreen());
       case AppRoutes.mainRoute:
-        return MaterialPageRoute(builder:(_)=> MainScreen());
+        return MaterialPageRoute(builder: (_) => MainScreen());
+      // case AppRoutes.productDetailsRoute:
+      //   return MaterialPageRoute(builder: (_) => Productdetails());
       default:
         return unDefinedRoute();
     }

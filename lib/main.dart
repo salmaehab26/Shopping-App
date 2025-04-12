@@ -3,25 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Core/routes_manager/routes_generators.dart';
+import 'package:shopping/Features/Home/Cubit/AllProductsCubit/AllProductsViewModel.dart';
 
 import 'Features/Home/MainScreen.dart';
 import 'di/DependencyInjection.dart';
-import 'none/app_theme.dart';
+import 'Core/app_theme.dart';
 import 'Core/my_bloc_observer.dart';
 import 'Core/routes_manager/app_routes.dart';
 import 'Features/Splash_Screen/Splash_Screen.dart';
 import 'Features/auth/log_in/log_in_screen.dart';
 
-void main()  {
+void main() {
   Bloc.observer = MyBlocObserver();
   configureDependencies();
 
-  runApp( MyApp());
-
-  }
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(create: (context) => getIt<AllProductsViewModel>())
+  ], child: MyApp()));
+}
 
 class MyApp extends StatelessWidget {
-  MyApp( {super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,4 +41,3 @@ class MyApp extends StatelessWidget {
         });
   }
 }
-

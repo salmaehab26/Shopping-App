@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Domain/entities/AllCategoriesResponseEntity.dart';
-import 'package:shopping/Features/Home/Cubit/HomeScreenStates.dart';
+import 'package:shopping/Features/Home/Cubit/HomeScreenCubit/HomeScreenStates.dart';
 
 import '../../../di/DependencyInjection.dart';
-import '../Cubit/HomeScreenViewModel.dart';
+import '../Cubit/HomeScreenCubit/HomeScreenViewModel.dart';
 import 'CategoryItem.dart';
 
 class CartegoryGrid extends StatelessWidget {

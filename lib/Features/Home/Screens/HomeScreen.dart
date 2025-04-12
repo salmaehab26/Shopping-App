@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping/Features/Home/parts/announcement.dart';
 import '../../../di/DependencyInjection.dart';
-import '../Cubit/HomeScreenStates.dart';
-import '../Cubit/HomeScreenViewModel.dart';
+import '../Cubit/HomeScreenCubit/HomeScreenStates.dart';
+import '../Cubit/HomeScreenCubit/HomeScreenViewModel.dart';
 import '../parts/CartegoryGrid.dart';
 import '../parts/categoryBar.dart';
 

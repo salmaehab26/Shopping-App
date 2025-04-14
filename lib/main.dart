@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping/Core/routes_manager/routes_generators.dart';
+import 'package:shopping/Core/widgets/SharedPreferencesUtils.dart';
 import 'package:shopping/Features/Home/Cubit/AllProductsCubit/AllProductsViewModel.dart';
 
 import 'Features/Home/MainScreen.dart';
@@ -13,10 +14,11 @@ import 'Core/routes_manager/app_routes.dart';
 import 'Features/Splash_Screen/Splash_Screen.dart';
 import 'Features/auth/log_in/log_in_screen.dart';
 
-void main() {
+Future<void> main() async {
   Bloc.observer = MyBlocObserver();
+  WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-
+ await SharedPreferenceUtils.init();
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => getIt<AllProductsViewModel>())
   ], child: MyApp()));
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             onGenerateRoute: RoutesGenerator.getRoutes,
             debugShowCheckedModeBanner: false,
-            initialRoute: AppRoutes.mainRoute,
+            initialRoute: AppRoutes.splashScreen,
             theme: AppTheme.mainTheme,
           );
         });

@@ -1,10 +1,12 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping/Core/routes_manager/app_routes.dart';
 import 'package:shopping/Features/auth/log_in/log_in_screen.dart';
 
 import '../../Core/resources/my_colors.dart';
 import '../../Core/resources/app_assets.dart';
+import '../../Core/widgets/SharedPreferencesUtils.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -32,10 +34,15 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     // الانتقال إلى Home Page بعد 3 ثوانٍ
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
-      );
+
+      var token = SharedPreferenceUtils.getData('token');
+      String route ;
+      if(token == null){
+        route = AppRoutes.loginRoute;
+      }else{
+        route = AppRoutes.mainRoute;
+      }
+      Navigator.pushNamed(context, route);
     }
     );
   }

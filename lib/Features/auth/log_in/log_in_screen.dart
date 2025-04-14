@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping/Core/widgets/SharedPreferencesUtils.dart';
 import 'package:shopping/Features/auth/log_in/log_in_cubit/LogInStates.dart';
 import 'package:shopping/Features/auth/log_in/log_in_cubit/LogInViewModel.dart';
 import 'package:shopping/di/DependencyInjection.dart';
@@ -16,14 +17,14 @@ import '../../../Core/widgets/dialog_utils.dart';
 import '../../../Core/widgets/validators.dart';
 
 class LoginScreen extends StatelessWidget {
-   LoginScreen({super.key});
+  LoginScreen({super.key});
 
   LogInViewModel viewModel = getIt<LogInViewModel>();
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<LogInViewModel, LogInStates>(
-      bloc: viewModel,
+        bloc: viewModel,
         listener: (context, state) {
           if (state is loadingStates) {
             DialogUtil.showLoading(context, "loading");
@@ -32,11 +33,11 @@ class LoginScreen extends StatelessWidget {
             DialogUtil.showMessage(context, state.failures.ErrorMessage!);
           } else if (state is sucssesStates) {
             DialogUtil.hideLoading(context);
-            DialogUtil.showMessage(context, "succesfully",
-                title: "success",posAction: () {
-                Navigator.pushReplacementNamed(
-                    context, AppRoutes.mainRoute);
-                },posActionName: "ok");
+            DialogUtil.showMessage(context, "succesfully", title: "success",
+                posAction: () {
+              Navigator.pushReplacementNamed(context, AppRoutes.mainRoute);
+            }, posActionName: "ok");
+            SharedPreferenceUtils.saveData("token", state.logInResponseEntity.token);
           }
         },
         child: Scaffold(
@@ -103,7 +104,6 @@ class LoginScreen extends StatelessWidget {
                                   // filledColor: AppColors.whiteColor,
                                   controller: viewModel.passwordController,
                                   validator: AppValidators.validatePassword,
-
                                 ),
                                 InkWell(
                                   onTap: () {},
@@ -133,7 +133,9 @@ class LoginScreen extends StatelessWidget {
                                               context, AppRoutes.signupRoute);
                                         },
                                         child: Text(
-                                          'Create Account',style: TextStyle(color:AppColors.primaryColor),
+                                          'Create Account',
+                                          style: TextStyle(
+                                              color: AppColors.primaryColor),
                                         ),
                                       ),
                                     ]))
